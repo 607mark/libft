@@ -1,17 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/16 20:29:39 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/16 21:15:28 by mshabano         ###   ########.fr       */
+/*   Created: 2024/04/16 20:43:11 by mshabano          #+#    #+#             */
+/*   Updated: 2024/04/16 21:44:46 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#ifndef LIBFT_H
-#define LIBFT_H
 
-#include <stddef.h>
+#include "libft.h"
 
-#endif
+void	*ft_memcpy(void *dst, const void *src, size_t n)
+{
+	unsigned char *original_dst;
+
+	if(!dst && !src)
+		return (dst);
+	original_dst = dst;
+	while (n > 0)
+	{
+		*(unsigned char *)dst++ = *(unsigned char *)src++;
+		n--;
+	}
+	return (original_dst);
+}
