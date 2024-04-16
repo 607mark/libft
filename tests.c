@@ -1,13 +1,15 @@
 #include <ctype.h>
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-int ft_strlen(const char *s);
+void ft_bzero(void *s, size_t n);
 
 int main()
 {
-		char *s = "LOL";
-		int a = strlen(c);
-		int b = ft_strlen(c);
-		printf("%d - %d\n", a, b);
+	char arr[20] = "HELLOOOOOOOOOiiiiii";
+	printf("%s\n", arr);
+	ft_bzero(arr, 10);
+	printf("%s\n", arr);
 }
+
