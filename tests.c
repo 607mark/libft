@@ -1,19 +1,17 @@
-#include <ctype.h>
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 
-void *ft_memcpy(void *dst, const void *src, size_t n);
+void *ft_memmove(void *dst, const void *src, size_t n);
 
 int main()
 {
-	int str1[5] = {1,2,3};
-	int str2[5] = {1,2,3};
-	printf("%d %d, %d\n", str1[0], str1[1], str1[2]);
-	memcpy(str1, str1 + 2, 2 * sizeof(int));
-	printf("%d %d, %d\n", str1[0], str1[1], str1[2]);
-	ft_memcpy(str2, str2 + 2, 2 * sizeof(int));
-	printf("%d %d, %d\n", str2[0], str2[1], str2[2]);
-
+	char arr1[6] = "abcde";
+	char arr2[6] = "abcde";
+	printf("%s\n", arr1);
+	ft_memmove(arr1 + 1, arr1, 2);
+	printf("%s\n", arr1);
+	memmove(arr2 + 1, arr2, 2);
+	printf("%s\n", arr2);
 }
 
