@@ -1,17 +1,13 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
-
-void *ft_memmove(void *dst, const void *src, size_t n);
+#include <ctype.h>
 
 int main()
 {
-	char arr1[6] = "abcde";
-	char arr2[6] = "abcde";
-	printf("%s\n", arr1);
-	ft_memmove(arr1 + 1, arr1, 2);
-	printf("%s\n", arr1);
-	memmove(arr2 + 1, arr2, 2);
-	printf("%s\n", arr2);
+	char dst[10];
+	char *p = &dst[0];
+	char *src = "Hello World";
+	int n = strlcpy(p, src, 10);
+	printf("%d\n%s", n, dst);
 }
-
