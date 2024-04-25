@@ -21,6 +21,7 @@ files 	   = ft_strlen \
 			 ft_atoi \
 			 ft_calloc \
 			 ft_strdup \
+			 ft_substr \
 
 Compiler	= cc
 
