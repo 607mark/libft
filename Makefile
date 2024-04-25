@@ -1,5 +1,3 @@
-Library		= libft
-
 files 	   = ft_strlen \
 			 ft_memmove \
 			 ft_memcpy \
@@ -19,23 +17,24 @@ files 	   = ft_strlen \
 			 ft_strncmp \
 			 ft_memchr \
 			 ft_memcmp \
+			 ft_strnstr \
 
-Compiler	= gcc
+Compiler	= cc
 
 CmpFlags	= -Wall -Wextra -Werror
 
-OUTN	= $(Library).a
+OUTN	= libft.a
 
 CFILES	= $(files:%=%.c)
 
 OFILES	= $(files:%=%.o)
 
-NAME	= $(OUTN)
+NAME	= libft.a
 
-$(NAME):
-	$(Compiler) $(CmpFlags) -c $(CFILES) -I./
-	ar -rc $(OUTN) $(OFILES)
-
+%.o : %.c
+	$(Compiler) $(CmpFlags) -c $<
+$(NAME): $(OFILES)
+	ar rcs libft.a $^ 
 all: $(NAME)
 
 clean:
