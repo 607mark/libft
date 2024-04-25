@@ -37,7 +37,7 @@ NAME	= libft.a
 %.o : %.c
 	$(Compiler) $(CmpFlags) -c $<
 $(NAME): $(OFILES)
-	ar rcs libft.a $^ 
+	ar rcs $(NAME) $^ 
 all: $(NAME)
 
 clean:
