@@ -18,6 +18,7 @@ files 	   = ft_strlen \
 			 ft_memchr \
 			 ft_memcmp \
 			 ft_strnstr \
+			 ft_atoi \
 
 Compiler	= cc
 
