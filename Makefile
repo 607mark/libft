@@ -24,6 +24,7 @@ files 	   = ft_strlen \
 			 ft_substr \
 			 ft_strjoin \
 			 ft_strtrim \
+			 ft_itoa \
 
 Compiler	= cc
 
