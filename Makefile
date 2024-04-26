@@ -23,6 +23,7 @@ files 	   = ft_strlen \
 			 ft_strdup \
 			 ft_substr \
 			 ft_strjoin \
+			 ft_strtrim \
 
 Compiler	= cc
 

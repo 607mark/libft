@@ -6,7 +6,7 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 18:58:56 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/26 19:14:16 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/04/26 20:06:53 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -42,9 +42,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (func_strlen(s + start) < len)
 		len = func_strlen(s + start);
-	if (func_strlen(s) < start + 1)
+	if (func_strlen(s) < start || (func_strlen(s) == 0))
 	{
-		len = 0;
 		sub_s = (char *)malloc ((1) * sizeof (char));
 		if (!sub_s)
 			return (NULL);

@@ -6,7 +6,7 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 19:18:48 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/26 19:40:16 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/04/26 21:02:23 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,6 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_s1;
 	size_t	len_s2;
 
-	if (!s1 || !s2)
-		return (NULL);
 	len_s1 = f_strlen(s1);
 	len_s2 = f_strlen(s2);
 	if (len_s1 + len_s2 == 0)
