@@ -5,41 +5,63 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/04/26 22:19:55 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/26 22:39:52 by mshabano         ###   ########.fr       */
+/*   Created: 2024/04/27 17:15:42 by mshabano          #+#    #+#             */
+/*   Updated: 2024/04/27 19:07:25 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
+
+static char	*count_alloc_sign_terminate(long long int new, int *num)
+{
+	int		sign;
+	char	*str;
+
+	sign = 0;
+	if (new < 0)
+	{
+		sign++;
+		new *= -1;
+	}
+	if (new == 0)
+		(*num)++;
+	while (new > 0)
+	{
+		(*num)++;
+		new /= 10;
+	}
+	str = (char *)malloc (sign + *num + 1);
+	if (!str)
+		return (NULL);
+	if (sign > 0)
+		str[0] = '-';
+	str[sign + *num] = '\0';
+	return (str);
+}
 
 char	*ft_itoa(int n)
 {
-	char	s[11];
-	int		i;
-	char	sign;
-	char	*res_string;
+	char					*res_string;
+	long long int			new;
+	int						num;
 
-	i = 0;
-	while (i < 11)
-		s[i++] = ' ';
-	if (n < 0)
-	{
-		sign = '-';
-		n *= -1;
-	}
-	if (n == 0)
-		return ("0");
-	while (n > 0)
-	{
-		s[i--] = (n % 10) + '0';
-		n /= 10;
-	}
-	res_string = (char *)malloc ((10 - i + 1) * sizeof (char));
+	new = n;
+	num = 0;
+	res_string = count_alloc_sign_terminate(new, &num);
 	if (!res_string)
 		return (NULL);
-	if (sign == '-')
-		*res_string = sign;
-	while (++i < 11)
-		*(res_string++) = s[i];
+	if (res_string[0] != '-')
+		num--;
+	if (new == 0)
+	{
+		res_string[0] = '0';
+		return (res_string);
+	}
+	if (new < 0)
+		new *= -1;
+	while (new > 0)
+	{
+		res_string[num--] = (new % 10) + '0';
+		new /= 10;
+	}
 	return (res_string);
 }
