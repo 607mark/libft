@@ -25,6 +25,8 @@ files 	   = ft_strlen \
 			 ft_strjoin \
 			 ft_strtrim \
 			 ft_itoa \
+			 ft_split \
+			 ft_strmapi \
 
 Compiler	= cc
 
