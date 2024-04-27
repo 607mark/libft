@@ -6,7 +6,7 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 22:11:30 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/27 19:34:08 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/04/27 22:49:18 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,19 @@ static size_t	count_words(char const *s, char c)
 	return (n);
 }
 
+static char	**free_arr(char **arr, int i)
+{
+	int	n;
+
+	n = 0;
+	while (n < i)
+	{
+		free(arr[n]);
+		n++;
+	}
+	return (NULL);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**arr;
@@ -45,16 +58,16 @@ char	**ft_split(char const *s, char c)
 	{
 		while (*s == c && *s)
 			s++;
-		if (*s)
-		{
-			if (!ft_strchr(s, c))
-				w_len = ft_strlen(s);
-			else
-				w_len = ft_strchr(s, c) - s;
-			arr[i] = ft_substr(s, 0, w_len);
-			s += w_len;
-			i++;
-		}
+		if (!*s)
+			break ;
+		if (!ft_strchr(s, c))
+			w_len = ft_strlen(s);
+		else
+			w_len = ft_strchr(s, c) - s;
+		arr[i++] = ft_substr(s, 0, w_len);
+		if (!(arr + i))
+			return (free_arr(arr, i));
+		s += w_len;
 	}
 	arr[i] = 0;
 	return (arr);
