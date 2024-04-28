@@ -6,7 +6,7 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 22:11:30 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/27 22:49:18 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/04/28 17:33:50 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,8 +50,10 @@ char	**ft_split(char const *s, char c)
 	size_t	w_len;
 	int		i;
 
+	if (!s)
+		return (NULL);
 	arr = (char **)malloc ((count_words(s, c) + 1) * sizeof (char *));
-	if (!s || !arr)
+	if (!arr)
 		return (NULL);
 	i = 0;
 	while (*s)

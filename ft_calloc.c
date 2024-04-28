@@ -6,7 +6,7 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:45:31 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/27 19:01:05 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/04/28 16:06:49 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 void	*ft_calloc(size_t count, size_t size)
 {
-	size_t	bytes;
 	void	*p;
 
-	bytes = count * size;
-	p = malloc(bytes);
+	p = malloc(count * size);
 	if (!p)
 		return (NULL);
 	else
-		ft_bzero(p, bytes);
+		ft_bzero(p, count * size);
 	return (p);
 }
