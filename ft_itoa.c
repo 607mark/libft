@@ -6,7 +6,7 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:15:42 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/28 20:30:35 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/04/28 23:17:01 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -49,15 +49,15 @@ char	*ft_itoa(int n)
 	res_string = count_alloc_sign_terminate(new, &num);
 	if (!res_string)
 		return (NULL);
-	if (res_string[0] != '-')
-		num--;
 	if (new == 0)
 	{
 		res_string[0] = '0';
 		return (res_string);
 	}
-	if (new < 0)
+	if (n < 0)
 		new *= -1;
+	if (res_string[0] != '-')
+		num--;
 	while (new > 0)
 	{
 		res_string[num--] = (new % 10) + '0';
