@@ -1,4 +1,4 @@
-files 	   = ft_strlen \
+main_files	= ft_strlen \
 			 ft_memmove \
 			 ft_memcpy \
 			 ft_strlcpy \
@@ -33,31 +33,42 @@ files 	   = ft_strlen \
 			 ft_putendl_fd \
 			 ft_putnbr_fd \
 
+bonus_files	= ft_lstnew_bonus \
+
 Compiler	= cc
 
 CmpFlags	= -Wall -Wextra -Werror
 
 OUTN	= libft.a
 
-CFILES	= $(files:%=%.c)
+MAINCFILES	= $(main_files:%=%.c)
 
-OFILES	= $(files:%=%.o)
+BONUSCFILES = $(bonus_files:%=%.c)
+
+OMAINFILES	= $(main_files:%=%.o)
+
+OBONUSFILES	= $(bonus_files:%=%.o)
 
 NAME	= libft.a
 
 %.o : %.c
 	$(Compiler) $(CmpFlags) -c $<
-$(NAME): $(OFILES)
+$(NAME): $(OMAINFILES)
 	ar rcs $(NAME) $^ 
+
+bonus: $(OBONUSFILES) $(NAME)
+	ar rcs $(NAME) $^
+
 all: $(NAME)
 
 clean:
 	rm -f $(NAME)
-	rm -f $(OFILES)
+	rm -f $(OMAINFILES)
+	rm -f $(OBONUSFILES)
 
 fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: all, clean, fclean, re
+.PHONY: bonus, all, clean, fclean, re
