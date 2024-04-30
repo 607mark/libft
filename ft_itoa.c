@@ -6,62 +6,58 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/27 17:15:42 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/28 23:17:01 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/04/30 18:46:45 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-static char	*count_alloc_sign_terminate(long long int new, int *num)
+char	*count_n_alloc(long long int n, unsigned int *count)
 {
 	int		sign;
-	char	*str;
+	char	*p_str;
 
 	sign = 0;
-	if (new < 0)
+	if (n < 0)
 	{
+		n *= -1;
 		sign++;
-		new *= -1;
 	}
-	if (new == 0)
-		(*num)++;
-	while (new > 0)
+	if (n == 0)
+		(*count)++;
+	while (n)
 	{
-		(*num)++;
-		new /= 10;
+		(*count)++;
+		n /= 10;
 	}
-	str = (char *)malloc (sign + *num + 1);
-	if (!str)
+	*count += sign;
+	p_str = (char *)malloc ((*count + 1) * sizeof(char));
+	if (p_str == NULL)
 		return (NULL);
-	if (sign > 0)
-		str[0] = '-';
-	str[sign + *num] = '\0';
-	return (str);
+	if (sign)
+		p_str[0] = '-';
+	p_str[(*count)--] = '\0';
+	return (p_str);
 }
 
 char	*ft_itoa(int n)
 {
-	char					*res_string;
-	long long int			new;
-	int						num;
+	long long int	copy;
+	char			*str;
+	unsigned int	count;
 
-	new = n;
-	num = 0;
-	res_string = count_alloc_sign_terminate(new, &num);
-	if (!res_string)
+	copy = n;
+	count = 0;
+	str = count_n_alloc(copy, &count);
+	if (str == NULL)
 		return (NULL);
-	if (new == 0)
-	{
-		res_string[0] = '0';
-		return (res_string);
-	}
 	if (n < 0)
-		new *= -1;
-	if (res_string[0] != '-')
-		num--;
-	while (new > 0)
+		copy *= -1;
+	if (copy == 0)
+		str[0] = '0';
+	while (copy)
 	{
-		res_string[num--] = (new % 10) + '0';
-		new /= 10;
+		str[count--] = copy % 10 + '0';
+		copy /= 10;
 	}
-	return (res_string);
+	return (str);
 }
