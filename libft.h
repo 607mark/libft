@@ -6,7 +6,7 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:29:39 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/30 20:02:24 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/05/01 22:08:11 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -58,4 +58,8 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putstr_pd(int n, int fd);
 void	ft_putnbr_fd(int n, int fd);
 t_list	*ft_lstnew(void *content);
+void ft_lstadd_front(t_list **lst, t_list *new);
+int	ft_lstsize(t_list *lst);
+t_list	*ft_lstlast(t_list *lst);
+void ft_lstadd_back(t_list **lst, t_list *new);
 #endif
