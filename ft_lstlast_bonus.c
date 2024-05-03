@@ -6,13 +6,13 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 21:51:40 by mshabano          #+#    #+#             */
-/*   Updated: 2024/05/01 22:00:00 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/05/02 16:54:48 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_list *ft_lstlast(t_list *lst)
+t_list	*ft_lstlast(t_list *lst)
 {
 	if (lst == NULL)
 		return (NULL);

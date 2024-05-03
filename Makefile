@@ -18,6 +18,7 @@ SRCS = 	ft_isalpha.c \
 		ft_memchr.c \
 		ft_memcmp.c \
 		ft_strnstr.c \
+		ft_substr.c \
 		ft_atoi.c \
 		ft_calloc.c \
 		ft_strdup.c \
@@ -38,6 +39,10 @@ SRCSB =	ft_lstnew_bonus.c \
 		ft_lstsize_bonus.c \
 		ft_lstlast_bonus.c \
 		ft_lstadd_back_bonus.c \
+		ft_lstdelone_bonus.c \
+		ft_lstclear_bonus.c \
+		ft_lstiter_bonus.c \
+		ft_lstmap_bonus.c
 
 CC = cc
 NAME = libft.a

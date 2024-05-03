@@ -6,16 +6,16 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/01 21:41:18 by mshabano          #+#    #+#             */
-/*   Updated: 2024/05/01 21:49:43 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/05/02 16:55:38 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_lstsize(t_list *lst)
+int	ft_lstsize(t_list *lst)
 {
-	int i;
-	t_list *curr;
+	int		i;
+	t_list	*curr;
 
 	curr = lst;
 	i = 0;
@@ -23,5 +23,6 @@ int ft_lstsize(t_list *lst)
 	{
 		curr = curr->next;
 		i++;
-	}return (i);
+	}
+	return (i);
 }
