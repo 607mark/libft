@@ -6,10 +6,9 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 17:56:11 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/27 18:38:23 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:48:26 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libft.h"
 
 char	*ft_strdup(const char *s1)
