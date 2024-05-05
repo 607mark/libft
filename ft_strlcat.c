@@ -6,7 +6,7 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/17 20:54:08 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/18 18:11:05 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:38:49 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	src_len;
 	size_t	dst_len;
 
-	src_len = ft_strlen(src);
+	if (!dst && dstsize == 0)
+		return (0);
 	dst_len = ft_strlen(dst);
+	src_len = ft_strlen(src);
 	if (dst_len > dstsize)
 		dst_len = dstsize;
 	if (dst_len == dstsize)

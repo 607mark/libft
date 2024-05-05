@@ -24,7 +24,6 @@ SRCS = 	ft_isalpha.c \
 		ft_strdup.c \
 		ft_strjoin.c \
 		ft_strtrim.c \
-		ft_strtrim.c \
 		ft_split.c \
 		ft_itoa.c \
 		ft_strmapi.c \
@@ -58,7 +57,7 @@ $(NAME): $(OBJ)
 
 bonus: .bonus
 
-.bonus: $(NAME) $(OBJB)
+.bonus: $(OBJ) $(OBJB)
 	$(AR) $(NAME) $^
 	@touch .bonus
 

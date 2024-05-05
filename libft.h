@@ -6,7 +6,7 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/16 20:29:39 by mshabano          #+#    #+#             */
-/*   Updated: 2024/05/02 18:07:50 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/05/03 17:13:10 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -14,7 +14,6 @@
 
 # include <stdlib.h>
 # include <unistd.h>
-# include <string.h>
 
 typedef struct s_list
 {

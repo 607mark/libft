@@ -6,7 +6,7 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 19:18:48 by mshabano          #+#    #+#             */
-/*   Updated: 2024/04/27 18:36:58 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/05/05 17:38:28 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,15 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_s1;
 	size_t	len_s2;
 
-	len_s1 = ft_strlen(s1);
-	len_s2 = ft_strlen(s2);
-	if (len_s1 + len_s2 == 0)
+	if (!s1)
+		return (0);
+	if (!s2)
 	{
-		p = (char *)malloc(1 * sizeof (char));
-		if (!p)
-			return (NULL);
-		*p = '\0';
+		p = ft_strdup(s1);
 		return (p);
 	}
+	len_s1 = ft_strlen(s1);
+	len_s2 = ft_strlen(s2);
 	p = (char *) malloc((len_s1 + len_s2 + 1) * sizeof (char));
 	if (!p)
 		return (NULL);
