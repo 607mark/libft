@@ -6,7 +6,7 @@
 /*   By: mshabano <mshabano@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/26 19:18:48 by mshabano          #+#    #+#             */
-/*   Updated: 2024/05/05 17:38:28 by mshabano         ###   ########.fr       */
+/*   Updated: 2024/05/05 18:37:37 by mshabano         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len_s2;
 
 	if (!s1)
-		return (0);
+	{
+		p = ft_strdup(s2);
+		return (p);
+	}
 	if (!s2)
 	{
 		p = ft_strdup(s1);

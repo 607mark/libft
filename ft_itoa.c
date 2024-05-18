@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*count_n_alloc(long long int n, unsigned int *count)
+static char	*count_n_alloc(long long int n, unsigned int *count)
 {
 	int		sign;
 	char	*p_str;
